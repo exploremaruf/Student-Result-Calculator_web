@@ -17,4 +17,11 @@ else if (perc >= 70) { grades = "A"; }
 else if (perc >= 60) { grades = "B"; } 
 else if (perc >= 40) { grades = "C"; } 
 else { grades = "F"; }
+
+let status = "Pass";
+if (math < 33 || phys < 33 || chem < 33 || eng < 33) {
+    status = "Fail";
+    grades = "F";
+}
+
 }
