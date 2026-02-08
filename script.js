@@ -1,32 +1,32 @@
-// script.js
 const calculate = () => {
-    let math = document.getElementById('math').value;
-    let phys = document.getElementById('physics').value;
-    let chem = document.getElementById('chemistry').value;
-    let eng = document.getElementById('english').value;
+    // Input gulo ke number-e convert kora ebong khali thakle 0 dhore neya
+    let math = Number(document.getElementById('math').value) || 0;
+    let phys = Number(document.getElementById('physics').value) || 0;
+    let chem = Number(document.getElementById('chemistry').value) || 0;
+    let eng = Number(document.getElementById('english').value) || 0;
 
-    let totalGrades = parseFloat(math) + parseFloat(phys) + parseFloat(chem) + parseFloat(eng);
-    let perc = (totalGrades / 400) * 100;
+    let totalGrades = math + phys + chem + eng;
+    let perc = ((totalGrades / 400) * 100).toFixed(2); // 2 ghor porjonto rakhbe
     
-    // Initial result show (Updated in next steps)
-    document.getElementById('showData').innerHTML = `Total: ${totalGrades}, Percentage: ${perc}%`;
-
     let grades = "";
-if (perc <= 100 && perc >= 80) { grades = "A+"; } 
-else if (perc >= 70) { grades = "A"; } 
-else if (perc >= 60) { grades = "B"; } 
-else if (perc >= 40) { grades = "C"; } 
-else { grades = "F"; }
+    if (perc >= 80) { grades = "A+"; } 
+    else if (perc >= 70) { grades = "A"; } 
+    else if (perc >= 60) { grades = "B"; } 
+    else if (perc >= 40) { grades = "C"; } 
+    else { grades = "F"; }
 
-let status = "Pass";
-if (math < 33 || phys < 33 || chem < 33 || eng < 33) {
-    status = "Fail";
-    grades = "F";
-}
+    let status = "Pass";
+    // Tumi khub bhalo logic diyecho individual subject fail check korar jonno
+    if (math < 33 || phys < 33 || chem < 33 || eng < 33 || perc < 33) {
+        status = "Fail";
+        grades = "F";
+    }
 
-// Final Output update
-document.getElementById('showData').innerHTML = 
-    `Out of 400 your total is ${totalGrades} and percentage is ${perc}%. <br> 
-     Your grade is ${grades}. You are ${status}.`;
-
+    // Final Output (innerHTML bebohar korle style add kora jay)
+    const resultElement = document.getElementById('showData');
+    resultElement.innerHTML = `
+        Out of 400 your total is <b>${totalGrades}</b> and percentage is <b>${perc}%</b>. <br> 
+        Your grade is <span style="color: ${status === 'Pass' ? 'green' : 'red'}">${grades}</span>. 
+        You are <b>${status}</b>.
+    `;
 }
