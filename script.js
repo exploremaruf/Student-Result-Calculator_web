@@ -24,4 +24,9 @@ if (math < 33 || phys < 33 || chem < 33 || eng < 33) {
     grades = "F";
 }
 
+// Final Output update
+document.getElementById('showData').innerHTML = 
+    `Out of 400 your total is ${totalGrades} and percentage is ${perc}%. <br> 
+     Your grade is ${grades}. You are ${status}.`;
+
 }
