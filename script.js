@@ -10,4 +10,11 @@ const calculate = () => {
     
     // Initial result show (Updated in next steps)
     document.getElementById('showData').innerHTML = `Total: ${totalGrades}, Percentage: ${perc}%`;
+
+    let grades = "";
+if (perc <= 100 && perc >= 80) { grades = "A+"; } 
+else if (perc >= 70) { grades = "A"; } 
+else if (perc >= 60) { grades = "B"; } 
+else if (perc >= 40) { grades = "C"; } 
+else { grades = "F"; }
 }
