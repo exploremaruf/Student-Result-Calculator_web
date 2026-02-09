@@ -2,20 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Result Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Result Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Result Calculator</h1>
-        <div class="input-group">
-            <input type="number" id="math" placeholder="Math Marks">
-            <input type="number" id="physics" placeholder="Physics Marks">
-            <input type="number" id="chemistry" placeholder="Chemistry Marks">
-            <input type="number" id="english" placeholder="English Marks">
+        <div class="calculator-box">
+            <h1>Result Calculator</h1>
+            <p class="subtitle">Enter your subject marks below</p>
+            
+            <div class="input-grid">
+                <div class="input-field">
+                    <label for="math">Mathematics</label>
+                    <input type="number" id="math" placeholder="0-100" max="100">
+                </div>
+                <div class="input-field">
+                    <label for="physics">Physics</label>
+                    <input type="number" id="physics" placeholder="0-100" max="100">
+                </div>
+                <div class="input-field">
+                    <label for="chemistry">Chemistry</label>
+                    <input type="number" id="chemistry" placeholder="0-100" max="100">
+                </div>
+                <div class="input-field">
+                    <label for="english">English</label>
+                    <input type="number" id="english" placeholder="0-100" max="100">
+                </div>
+            </div>
+
+            <button onclick="calculate()" class="btn">Check Result</button>
+            
+            <div id="showData">
+                </div>
         </div>
-        <button onclick="calculate()">Calculate</button>
-        <div id="showData"></div>
     </div>
     <script src="script.js"></script>
 </body>
