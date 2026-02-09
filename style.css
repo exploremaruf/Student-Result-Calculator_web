@@ -101,3 +101,19 @@ input:focus {
     min-height: 50px;
     display: none; /* শুরুতে লুকানো থাকবে */
 }
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+.btn-reset {
+    background: #6c757d;
+}
+.btn-reset:hover {
+    background: #5a6268;
+}
+/* ভুল ইনপুটের জন্য লাল বর্ডার */
+input.invalid {
+    border-color: #e74c3c;
+    background-color: #fff5f5;
+}
