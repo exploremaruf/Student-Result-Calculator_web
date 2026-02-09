@@ -44,3 +44,11 @@ const calculate = () => {
         </div>
     `;
 }
+
+const resetFields = () => {
+    document.querySelectorAll('input').forEach(input => {
+        input.value = "";
+        input.classList.remove('invalid');
+    });
+    document.getElementById('showData').style.display = "none";
+}
