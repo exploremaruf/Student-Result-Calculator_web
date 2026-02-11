@@ -4,40 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Result Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="calculator-box">
-            <h1>Result Calculator</h1>
-            <p class="subtitle">Enter your subject marks below</p>
+            <div class="header">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Result Portal</h1>
+                <p class="subtitle">Enter your marks to calculate performance</p>
+            </div>
             
             <div class="input-grid">
                 <div class="input-field">
-                    <label for="math">Mathematics</label>
-                    <input type="number" id="math" placeholder="0-100" max="100">
+                    <label><i class="fas fa-calculator"></i> Math</label>
+                    <input type="number" id="math" placeholder="0-100">
                 </div>
                 <div class="input-field">
-                    <label for="physics">Physics</label>
-                    <input type="number" id="physics" placeholder="0-100" max="100">
+                    <label><i class="fas fa-atom"></i> Physics</label>
+                    <input type="number" id="physics" placeholder="0-100">
                 </div>
                 <div class="input-field">
-                    <label for="chemistry">Chemistry</label>
-                    <input type="number" id="chemistry" placeholder="0-100" max="100">
+                    <label><i class="fas fa-flask"></i> Chemistry</label>
+                    <input type="number" id="chemistry" placeholder="0-100">
                 </div>
                 <div class="input-field">
-                    <label for="english">English</label>
-                    <input type="number" id="english" placeholder="0-100" max="100">
+                    <label><i class="fas fa-book"></i> English</label>
+                    <input type="number" id="english" placeholder="0-100">
                 </div>
             </div>
 
-           <div class="button-group">
-    <button onclick="calculate()" class="btn">Calculate</button>
-    <button onclick="resetFields()" class="btn btn-reset">Reset</button>
-</div>
+            <div class="button-group">
+                <button onclick="calculate()" class="btn btn-calc">Calculate Result</button>
+                <button onclick="resetFields()" class="btn btn-reset"><i class="fas fa-undo"></i></button>
+            </div>
             
-            <div id="showData">
-                </div>
+            <div id="showData" class="result-card"></div>
         </div>
     </div>
     <script src="script.js"></script>
